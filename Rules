@@ -1,0 +1,25 @@
+1 - we always care about the worst case
+
+
+2 - constants doesn't have effect in Big O, so we remove them
+
+
+3 - different terms for inputs
+
+ex: 
+
+function triky(a , b){
+    a.forEach(function(){
+        console.log('hey)
+    })
+
+    b.forEach(function(){
+        console.log('hey)
+    })
+
+    //the size of a is diff than b so in this case we Big O is O(n + m) we don't remove constants here cuz we have diff inputs
+}
+
+4 - drop non dominants
+
+   what will be th Big O in this case ( O(n) + O(n^2) ) ? O(n^2) so we always take the dominant Big O
