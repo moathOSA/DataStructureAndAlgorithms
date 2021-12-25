@@ -15,4 +15,6 @@ function findNemo(array){
 }
 
 
+// findNemo Big O is O(n) cuz each time you have to find nemo yu have to search through all the elements in the array
+
 findNemo(names);
