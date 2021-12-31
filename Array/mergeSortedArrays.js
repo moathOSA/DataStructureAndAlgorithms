@@ -1,6 +1,9 @@
 function mergeSortedArrays(array1, array2){
 
-    isValidArrays(array1,array2);
+    if(isEmptyArrays(array1,array2)){
+        //console.log("Ooch, your arrays are empty !");
+       return "Ooch, your arrays are empty !";
+    };
     
     
     if(array1.length === 0) {
@@ -34,12 +37,9 @@ function mergeSortedArrays(array1, array2){
        return mergedArray;
   }
 
-  function isValidArrays(array1,array2){
-
-    if(array1.length === 0 && array2.length === 0){
-        //console.log("Ooch, your arrays are empty !");
-        return "Ooch, your arrays are empty !";
-    }
+  function isEmptyArrays(array1,array2) {
+        //console.log((array1.length === 0 && array2.length === 0);
+        return (array1.length === 0 && array2.length === 0);
 }
   
   mergeSortedArrays([0,3,4,31], [3,4,6,30]);
