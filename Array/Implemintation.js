@@ -27,6 +27,13 @@ class Array {
         delete this.data[this.length - 1];
         this.length--;
       }
+      unShift(val) {
+        this.length++;
+        for (let i =  this.length - 1 ; i >= 0; i--) {
+          this.data[i] = this.data[i - 1];
+        }
+        this.data[0] = val;
+      }
     }
     
     const myArray = new Array();
@@ -34,6 +41,8 @@ class Array {
     myArray.push('you');
     myArray.push('are');
     myArray.push('nice');
+    myArray.deleteAtIndex(0);
+    myArray.unShift('hey');
     console.log(myArray);
     
     
