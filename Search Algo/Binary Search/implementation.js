@@ -1,7 +1,9 @@
 const items = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
-let target = 30;
 
-function binarySearch(L,R){
+function search(items,target){
+    return binarySearch(1,items.length,target);
+}
+function binarySearch(L,R,target){
     if(L == R){
         return false;
     }
@@ -13,12 +15,12 @@ function binarySearch(L,R){
     }
 
     if(mid > target){
-        binarySearch(L,mid);
+        binarySearch(L,mid,target);
     }
 
     if(mid < target){
-        binarySearch(mid+1,R);
+        binarySearch(mid+1,R,target);
     }
 }
 
-binarySearch(1,items.length);
+search(items,5);
