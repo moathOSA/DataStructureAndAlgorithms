@@ -1,26 +1,26 @@
-const items = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+const nums = [-1,0,3,5,9,12];
 
-function search(items,target){
-    return binarySearch(1,items.length,target);
+function search(nums,target){
+    return binarySearch(0,nums.length-1,nums,target);
 }
-function binarySearch(L,R,target){
-    if(L == R){
-        return false;
+function binarySearch(start,end,nums,target){
+    if(start == end){
+        return -1;
     }
 
-    let mid = Math.floor((L + R)/2);
+    let mid = Math.floor((start + end)/2);
 
-    if(mid == target){
-        return target;
+    if(nums[mid] == target){
+        return mid;
     }
-
-    if(mid > target){
-        binarySearch(L,mid,target);
+    
+    if(nums[mid] < target){
+        binarySearch(mid+1, end, nums,target)
     }
-
-    if(mid < target){
-        binarySearch(mid+1,R,target);
+    
+    if(nums[mid] > target){
+        binarySearch(start, mid, nums,target)
     }
 }
 
-search(items,5);
+search(nums,9);
